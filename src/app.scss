@@ -4,10 +4,21 @@
 @import 'footer';
 @import 'content';
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:400');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 .widget {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+.widgets {
+  position: sticky;
+  top: 5rem;
 }
 
 .page-wrap {

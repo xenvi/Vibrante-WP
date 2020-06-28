@@ -1,10 +1,13 @@
 header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: 100px;
     text-transform: uppercase;
     font-weight: bold;
     background: $darkblue;
+    z-index: 998;
+    transition: 0.3s all;
     .container {
         display: flex;
         align-items: center;
@@ -12,6 +15,8 @@ header {
         width: 100%;
         .brand {
             color: #fff;
+            font-size: 1.1rem;
+            text-decoration: none;
         }  
     }
     .menu {
@@ -29,18 +34,17 @@ header {
         }
         li {
             position: relative;
-            &:first-child a {
-                padding-left: 0;
-            }
-            &:last-child a {
-                padding-right: 0;
-            }
             a {
                 padding: 0.25rem 1rem;
                 color: #fff;
+                text-decoration: none;
+                transition: background-size .4s ease-in-out;
+                background: linear-gradient(to bottom, transparent 62%, $salmon 0) center center/0% 75% no-repeat;
                 &:hover {
-                    text-decoration: none;
-                    color: $salmon;
+                    background-size: 90% 100%;
+                  }
+                &:active {
+                    background-size: 70% 100%;
                 }
             }
             .sub-menu {
@@ -50,17 +54,21 @@ header {
                 left: 0;
                 background: #fff;
                 box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+                border-radius: 5px;
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                width: 300px;
+                width: 200px;
                 z-index: 999;
                 a {
-                    color: black;
+                    color: $darkblue;
                     padding: 0.25rem;
                     text-align: center;
                     display: block;
                     text-decoration: none;
+                    &:hover {
+                        color: $salmon;
+                    }
                 }
             }
         }
@@ -69,9 +77,10 @@ header {
 .search {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     i {
         color: #fff;
+        cursor: pointer;
     }
     input {
         background: none;
@@ -87,18 +96,34 @@ header {
         &:-webkit-autofill:hover, 
         &:-webkit-autofill:focus, 
         &:-webkit-autofill:active {
-            background: none !important;
-            color: #fff !important;
+            -webkit-box-shadow: 0 0 0px 1000px $mediumblue inset;
+            box-shadow: 0 0 0px 1000px $mediumblue inset;
+            -webkit-text-fill-color: #fff;
         }
     }
     button {
-        background: $mediumblue;
+        background: $yellow;
         border: none;
         border-radius: 10px;
-        color: #fff;
-        padding: 0.25rem 0.5rem;
+        color: $mediumblue;
+        padding: 0.4rem 0.8rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: 0.3s all;
         &:focus, &:active {
             outline: none;
         }
+        &:hover {
+            box-shadow: 0 0rem 0.5rem $yellow;
+            transition: 0.3s all;
+        }
     }
+}
+.smallnav {
+    height: 50px !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 0 1rem $darkblue !important;
+    background: rgba(36,48,94, 0.95) !important;
+    transition: 0.3s all;
 }

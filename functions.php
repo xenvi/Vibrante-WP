@@ -16,7 +16,7 @@ function load_js()
     wp_register_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery', false, true);
     wp_enqueue_script('bootstrap');
 
-    wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], 1, true);
+    wp_register_script('app', get_template_directory_uri() . '/dist/app.js', 'jquery', 1, true);
     wp_enqueue_script('app');
 }
 add_action('wp_enqueue_scripts', 'load_js');
@@ -32,6 +32,7 @@ register_nav_menus(
         'top-menu' => 'Top Menu Location',
         'mobile-menu' => 'Mobile Menu Location',
         'footer-menu' => 'Footer Menu Location',
+        'social-menu' => 'Social Menu Location',
     )
 );
 

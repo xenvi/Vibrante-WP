@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibrante</title>
+    <title><?php echo get_bloginfo('name')?></title>
 
     <?php wp_head(); ?>
 
@@ -13,7 +13,7 @@
 
 <header>
 <div class="container">
-    <span class="brand">BRAND</span>
+    <a href="<?php echo get_page_link(get_page_by_path('/'));?>" class="brand"><?php the_field('title');?></a>
 
     <div class="menu">
         <?php wp_nav_menu(

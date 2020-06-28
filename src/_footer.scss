@@ -1,18 +1,73 @@
 footer {
     width: 100%;
-    height: 100px;
+    height: auto;
     background: $mediumblue;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 3rem;
     .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+        padding: 1rem;
+    }
+    .legal {
+        width: 100%;
+        height: 75px;
+        color: $salmon;
+        background: $darkblue;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+    }
+    .waves-wrapper {
+        width: 100%;
+        height: auto;
+        .wave-container {
+            position: relative;
+            height: 100%;
+            z-index: 0;
+            svg {
+                display: block;
+                position: absolute;
+                bottom: 0;
+            }
+        }
     }
     .footer-bar {
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+            position: relative;
+            a {
+                padding: 0.25rem 1rem;
+                font-size: 1.75rem;
+                color: #fff;
+                text-decoration: none;
+                transition: background-size .4s ease-in-out;
+                background: linear-gradient(to bottom, transparent 62%, $salmon 0) center center/0% 75% no-repeat;
+                &:hover {
+                    background-size: 90% 100%;
+                  }
+                &:active {
+                    background-size: 70% 100%;
+                }
+            }
+        }
+    }
+    .social-bar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2rem;
         li {
             position: relative;
             &:first-child a {
@@ -24,6 +79,18 @@ footer {
             a {
                 padding: 0.25rem 1rem;
                 color: #fff;
+                font-size: 1.6rem;
+                i {
+                    transition: transform 0.7s ease-out;
+                }
+                &:hover {
+                    text-decoration: none;
+                    color: $yellow;
+                    i {
+                        transform: rotate(360deg);
+                        transition: transform 0.7s ease-in;
+                    }
+                }
             }
         }
     }

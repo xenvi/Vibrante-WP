@@ -13,7 +13,7 @@
 
             <?php get_template_part('includes/section','content'); ?>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 widgets">
             <?php if(is_active_sidebar('page-sidebar')):?>
                 <?php dynamic_sidebar('page-sidebar');?>
             <?php endif;?>

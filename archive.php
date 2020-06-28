@@ -12,7 +12,7 @@
             <?php previous_posts_link();?>
             <?php next_posts_link();?>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 widgets">
             <?php if(is_active_sidebar('blog-sidebar')):?>
                 <?php dynamic_sidebar('blog-sidebar');?>
             <?php endif;?>
