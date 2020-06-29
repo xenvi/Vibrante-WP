@@ -1,0 +1,37 @@
+@mixin keyframes-animation($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+    @keyframes #{$name} {
+      @content;
+    }
+  }
+  @mixin prefix-property($name, $value) {
+    -webkit-#{$name}: $value;
+            #{$name}: $value;
+  }
+
+  @include keyframes-animation(waves-bounce) {
+    0% {
+      @include prefix-property(transform, translateY(0));
+    }
+    100% {
+      @include prefix-property(transform, translateY(1rem));
+    }
+  }
+  @include keyframes-animation(waves-bounce2) {
+    0% {
+      @include prefix-property(transform, translateY(-0.5rem));
+    }
+    100% {
+      @include prefix-property(transform, translateY(0.2rem));
+    }
+  }
+  @include keyframes-animation(blob-move) {
+    0% {
+      @include prefix-property(transform, translate(-0.5rem));
+    }
+    100% {
+      @include prefix-property(transform, translateY(0.2rem));
+    }
+  }

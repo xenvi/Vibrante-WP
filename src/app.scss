@@ -1,26 +1,102 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'colors';
+@import 'mixins';
 @import 'header';
+@import 'frontpage';
+@import 'archive';
 @import 'footer';
-@import 'content';
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400');
 
+// main
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
-.widget {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.widgets {
-  position: sticky;
-  top: 5rem;
-}
-
 .page-wrap {
     padding: 2rem;
+    z-index: 1;
+}
+::-moz-selection {
+  background-color: $darkblue;
+  color: #fff;
+} 
+::selection {
+  background-color: $darkblue;
+  color: #fff;
+} 
+
+// widgets
+.widgets {
+  .widget_recent_entries {
+    ul li {
+      flex-direction: column;
+      color: $lightblue;
+      font-size: 0.7rem !important;
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+  .widget {
+    list-style-type: none;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    box-shadow: 0 0 0.4rem rgba($darkblue, 0.1);
+    color: $darkblue;
+    &:first-child {
+      margin-top: 0;
+    }
+    .widget-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.25rem;
+      width: 100%;
+      padding: 0.3rem 0;
+      border-bottom: 0.1rem solid rgba($lightblue, 0.5);
+    }
+    ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+      li {
+        padding: 0.25rem 0;
+        display: flex;
+        justify-content: space-between;
+        &:last-child {
+          padding: 0.25rem 0 0 0;
+          border-bottom: none;
+        }
+        a {
+          color: $darkblue;
+          text-decoration: none;
+          transition: 0.3s all;
+          &:hover {
+            color: $salmon;
+            transition: 0.3s all;
+          }
+        }
+      }
+    }
+    // social menu widget
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+      li {
+        margin-right: 1.25rem;
+        font-size: 1.25rem;
+        transition: 0.3s all;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:hover {
+          transform: rotate(25deg);
+          text-shadow: 0 0.3rem 0.2rem rgba($darkblue, 0.2);
+          transition: 0.3s all;
+        }
+      }
+    }
+  }
 }

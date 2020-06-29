@@ -6,14 +6,13 @@
     <title><?php echo get_bloginfo('name')?></title>
 
     <?php wp_head(); ?>
-
     
 </head>
 <body>
 
 <header>
 <div class="container">
-    <a href="<?php echo get_page_link(get_page_by_path('/'));?>" class="brand"><?php the_field('title');?></a>
+    <a href="<?php echo get_home_url();?>" class="brand"><?php echo get_bloginfo('name')?></a>
 
     <div class="menu">
         <?php wp_nav_menu(

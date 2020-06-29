@@ -1,8 +1,8 @@
 
 
 <footer>
-<div class="waves-wrapper">
-            <div class="wave-container">
+    <div class="waves-wrapper-footer">
+            <div class="wave-container-footer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#374785" fill-opacity="1" d="M0,320L60,309.3C120,299,240,277,360,272C480,267,600,277,720,288C840,299,960,309,1080,288C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
             </div>
         </div>

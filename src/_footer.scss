@@ -22,17 +22,17 @@ footer {
         justify-content: center;
         align-items: center;
     }
-    .waves-wrapper {
+    .waves-wrapper-footer {
         width: 100%;
         height: auto;
-        .wave-container {
+        .wave-container-footer {
             position: relative;
             height: 100%;
-            z-index: 0;
             svg {
                 display: block;
                 position: absolute;
                 bottom: 0;
+                z-index: -1;
             }
         }
     }
@@ -80,15 +80,17 @@ footer {
                 padding: 0.25rem 1rem;
                 color: #fff;
                 font-size: 1.6rem;
+                transition: all 0.5s ease-in;
                 i {
-                    transition: transform 0.7s ease-out;
+                    transition: all 0.5s ease-out;
                 }
                 &:hover {
                     text-decoration: none;
-                    color: $yellow;
+                    transition: all 0.5s ease-in;
                     i {
                         transform: rotate(360deg);
-                        transition: transform 0.7s ease-in;
+                        text-shadow: 0 0.3rem 0.3rem $darkblue;
+                        transition: all 0.5s ease-in;
                     }
                 }
             }
