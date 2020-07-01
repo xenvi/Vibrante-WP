@@ -13,11 +13,13 @@ Template Name: Contact Us
 
         <div class="row">
 
-            <div class="col-lg-6">
-                This is where contact form goes
+            <div class="col-lg-9">
+                <?php get_template_part('includes/section','content'); ?>
             </div>
-            <div class="col-lg-6">
-            <?php get_template_part('includes/section','content'); ?>
+            <div class="col-lg-3 widgets">
+            <?php if(is_active_sidebar('blog-sidebar')):?>
+                    <?php dynamic_sidebar('blog-sidebar');?>
+                <?php endif;?>
             </div>
         
         </div>

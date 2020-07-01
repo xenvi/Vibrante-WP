@@ -1,18 +1,23 @@
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 
-   <div class="card mb-3">
-       <div class="card-body d-flex justify-content-center align-items-center">
+<?php 
+    $fname = get_the_author_meta('first_name');
+    $lname = get_the_author_meta('last_name');
+?>
 
-       <?php if(has_post_thumbnail()):?>
-            <img src="<?php the_post_thumbnail_url('blog-small');?>" alt="<?php the_title();?>" class="img-fluid mb-3 img-thumbnail mr-3"/>
-        <?php endif;?>
+   <div class="card mb-5">
+       <div class="card-body">
+            <span class="cat"><?php the_category(' | '); ?></span>
+            <a href="<?php the_permalink();?>" class="title"><?php the_title();?></a>
+            <p class="subtext"><?php echo get_the_date('F j, Y');?> by <?php echo $fname;?> <?php echo $lname;?></p>
+            <?php if(has_post_thumbnail()):?>
+                <a href="<?php the_permalink();?>"><img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/></a>
+            <?php endif;?>
 
-        <div class="blog-content">
-            <h3><?php the_title();?></h3>
-            <?php the_excerpt(); ?>
-
-            <a href="<?php the_permalink();?>" class="btn btn-primary">Read more</a>
-        </div>
+            <div class="blog-content">
+                <span><?php the_excerpt(); ?></span>
+                <a href="<?php the_permalink();?>">Continue reading</a>
+            </div>
        </div>
    </div>
 

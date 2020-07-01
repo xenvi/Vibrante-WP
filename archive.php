@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 <section class="page-landing">
     <span><?php echo single_cat_title();?></span>
+    <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+        <?php if(function_exists('bcn_display'))
+        {
+            bcn_display();
+        }?>
+    </div>
     <div class="waves-wrapper">
         <div class="wave-container">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L48,240C96,256,192,288,288,282.7C384,277,480,235,576,234.7C672,235,768,277,864,277.3C960,277,1056,235,1152,202.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
@@ -15,8 +21,7 @@
             <div class="col-lg-9">
                 <?php get_template_part('includes/section','archive'); ?>
 
-                <?php previous_posts_link();?>
-                <?php next_posts_link();?>
+                <?php echo paginate_links();?>
             </div>
             <div class="col-lg-3 widgets">
                 <?php if(is_active_sidebar('blog-sidebar')):?>

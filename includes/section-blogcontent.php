@@ -1,13 +1,6 @@
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 
 <section class="blog-content">
-    <div class="title"><span><?php the_title();?></span></div>
-    <?php 
-        $fname = get_the_author_meta('first_name');
-        $lname = get_the_author_meta('last_name');
-    ?>
-    <p class="subtext"><?php echo get_the_date('F j, Y');?> by <?php echo $fname;?> <?php echo $lname;?></p>
-
     <?php if(has_post_thumbnail()):?>
         <img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/>
     <?php endif;?>
@@ -33,7 +26,24 @@
         <?php endforeach; endif;?>
    </div>
 
-    <?php comments_template();?>
+    <?php comment_form();
+        $comments_number = get_comments_number();
+        if ($comments_number):?>
+            <div class="comments">
+                <h3>Comments</h3>
+                <ol>
+                    <?php
+                    $comments = get_comments(array(
+                        'post_id' => $post->ID,
+                        'status' => 'approve'
+                    ));
+                    wp_list_comments(array(
+                        'per_page' => 10
+                    ), $comments)
+                    ?>
+                </ol>
+            </div>
+    <?php endif;?>
 </section>
 
 <?php endwhile; else: endif; ?>

@@ -3,6 +3,8 @@
 @import 'mixins';
 @import 'header';
 @import 'frontpage';
+@import 'aboutpage';
+@import 'contact';
 @import 'archive';
 @import 'footer';
 
@@ -26,6 +28,82 @@ body {
   background-color: $darkblue;
   color: #fff;
 } 
+.page-landing span {
+  z-index: 1;
+}
+.page-numbers {
+  font-weight: bold;
+  color: $darkblue;
+  padding-right: 1rem;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: $salmon;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+  }
+}
+.current {
+  color: $salmon;
+}
+
+// 404
+.page404 {
+  background: $darkblue;
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  .waves-wrapper-404 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    margin-top: -100px;
+    z-index: 1;
+    .content {
+      width: 400px;
+      .error {
+        margin-left: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .under-error {
+        background: #fff;
+        padding: 0.075rem 0;
+        width: 25px;
+        margin: 5px 0 10px 10px;
+      }
+      .search {
+        margin-bottom: 0.5rem;
+        input, button {
+          display: block;
+        }
+      }
+      .home {
+        margin: 20px 0 0 10px;
+        a {
+          font-weight: bold;
+          color: #fff;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            color: $salmon;
+            text-decoration: none;
+            transition: 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
 
 // widgets
 .widgets {
@@ -98,5 +176,30 @@ body {
         }
       }
     }
+  }
+}
+
+// breadcrumbs
+.breadcrumbs {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  span {
+      display: block;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 0;
+      padding: 0 0.25rem;
+      a {
+          color: $salmon;
+          transition: 0.2s ease-in-out;
+          &:hover {
+              color: #fff;
+              text-decoration: none;
+              transition: 0.2s ease-in-out;
+          }
+      }
   }
 }
