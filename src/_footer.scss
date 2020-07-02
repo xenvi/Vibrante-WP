@@ -46,17 +46,22 @@ footer {
         li {
             position: relative;
             a {
-                padding: 0.25rem 1rem;
+                margin: 0.25rem 1rem;
                 font-size: 1.75rem;
                 color: #fff;
                 text-decoration: none;
-                transition: background-size .4s ease-in-out;
-                background: linear-gradient(to bottom, transparent 62%, $salmon 0) center center/0% 75% no-repeat;
-                &:hover {
-                    background-size: 90% 100%;
-                  }
-                &:active {
-                    background-size: 70% 100%;
+                animation:show .2s .4s ease 1 both;
+                &:before {
+                    content:'';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background:#fff;
+                    top:47%;
+                    animation:out 0.3s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+                }
+                &:hover:before {
+                    animation:in 0.3s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
                 }
             }
         }
@@ -88,6 +93,7 @@ footer {
                     text-decoration: none;
                     transition: all 0.5s ease-in;
                     i {
+                        color: $salmon;
                         transform: rotate(360deg);
                         text-shadow: 0 0.3rem 0.3rem $darkblue;
                         transition: all 0.5s ease-in;

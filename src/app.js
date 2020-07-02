@@ -7,3 +7,19 @@
         jQuery("header").removeClass("smallnav");
     }
 });
+
+function toggle() {
+    if ( jQuery( window ).width() >= 800 ) {
+      jQuery( '.nav.mobile-menu' ).hide();
+      jQuery( '.nav.desktop-menu' ).show();
+    } else {
+      jQuery( '.nav.desktop-menu' ).hide();
+      jQuery( '.nav.mobile-menu' ).show();
+    }
+}
+
+toggle();
+
+jQuery( window ).resize( function () {
+    toggle();
+} );

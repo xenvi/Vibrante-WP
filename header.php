@@ -21,6 +21,12 @@
             'menu_class' => 'top-bar'
             )
         ); ?>
+        <?php wp_nav_menu(
+            array(
+            'theme_location' => 'mobile-menu',
+            'menu_class' => 'mobile-menu'
+            )
+        ); ?>
     <div class="search-form">
         <?php get_search_form();?>
     </div>

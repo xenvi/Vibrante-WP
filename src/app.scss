@@ -49,7 +49,7 @@ body {
 // 404
 .page404 {
   background: $darkblue;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 75px);
   display: flex;
   align-items: center;
   position: relative;
@@ -202,4 +202,8 @@ body {
           }
       }
   }
+}
+
+img {
+  width: 100%;
 }
