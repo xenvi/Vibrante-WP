@@ -10250,6 +10250,42 @@ header .top-bar li .sub-menu a:hover {
   text-align: left;
 }
 
+.wpcf7-form label {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.3rem 0;
+  width: 100%;
+}
+.wpcf7-form label input, .wpcf7-form label textarea {
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+  box-shadow: 0 0 0.4rem rgba(36, 48, 94, 0.1);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.1rem;
+  transition: 0.3s ease-in-out;
+}
+.wpcf7-form label input:focus, .wpcf7-form label textarea:focus {
+  outline: none;
+  box-shadow: 0.1rem 0.2rem 0.8rem rgba(36, 48, 94, 0.2);
+  transition: 0.3s ease-in-out;
+}
+.wpcf7-form input[type=submit] {
+  color: #fff;
+  background: #24305E;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  transition: 0.3s ease-in-out;
+}
+.wpcf7-form input[type=submit]:hover {
+  box-shadow: 0 0rem 0.5rem #F76C6C;
+  text-decoration: none;
+  background: #F76C6C;
+  transition: 0.3s ease-in-out;
+}
+
 .page-landing {
   position: relative;
   width: 100%;
@@ -10290,8 +10326,6 @@ header .top-bar li .sub-menu a:hover {
   padding: 0 0.75rem;
   color: #fff;
   transition: all 0.4s ease-in-out;
-  background: linear-gradient(to bottom, transparent 42%, #F76C6C 0) right center/0% 75% no-repeat;
-  background-size: 85% 100%;
 }
 
 .single-wave {
