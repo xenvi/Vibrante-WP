@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="page-landing">
-    <span><?php echo single_cat_title();?></span>
+    <span><?php echo get_the_archive_title();?></span>
     <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
         <?php if(function_exists('bcn_display'))
         {

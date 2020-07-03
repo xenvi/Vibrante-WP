@@ -10296,6 +10296,17 @@ header .top-bar li .sub-menu li a:hover:before {
 
 .mobile-menu {
   display: none;
+  list-style-type: none;
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 1rem #24305E;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -10313,7 +10324,7 @@ header .top-bar li .sub-menu li a:hover:before {
   }
 
   .mobile-menu {
-    display: block !important;
+    display: flex !important;
   }
 }
 .landing {
@@ -10397,6 +10408,15 @@ header .top-bar li .sub-menu li a:hover:before {
   text-align: left;
 }
 
+.ourteam img:nth-child(even) {
+  float: left;
+  width: 300px !important;
+}
+.ourteam img:nth-child(odd) {
+  float: right;
+  width: 300px;
+}
+
 .wpcf7-form label {
   text-transform: uppercase;
   font-weight: bold;
@@ -10444,6 +10464,7 @@ header .top-bar li .sub-menu li a:hover:before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #fff;
 }
 .page-landing span {
@@ -10452,6 +10473,13 @@ header .top-bar li .sub-menu li a:hover:before {
   font-size: 4.5rem;
   font-weight: bold;
   margin-top: -10%;
+  z-index: 2;
+}
+.page-landing h1 {
+  font-weight: bold;
+  margin-top: -10%;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .title-wrapper {
@@ -10562,6 +10590,15 @@ header .top-bar li .sub-menu li a:hover:before {
 
 .blog-content {
   text-align: center;
+}
+.blog-content .fields {
+  background: rgba(168, 208, 230, 0.3);
+  color: #24305E;
+  border-radius: 5px;
+  list-style: none;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  text-align: left;
 }
 .blog-content .content {
   padding: 1rem;
@@ -10718,6 +10755,7 @@ header .top-bar li .sub-menu li a:hover:before {
 }
 .blog-content .comments ol .comment .vcard img {
   margin: 0 0.5rem 0 0;
+  width: auto;
 }
 .blog-content .comments ol .comment .vcard .fn {
   font-style: normal;
@@ -11075,4 +11113,8 @@ body {
 
 img {
   width: 100%;
+}
+
+.content ul {
+  padding: 0 2rem;
 }

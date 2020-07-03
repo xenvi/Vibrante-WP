@@ -163,6 +163,17 @@ header {
 // mobile menu
 .mobile-menu{
     display: none;
+    list-style-type: none;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 0 1rem $darkblue;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
   @media only screen and (min-width: 1000px){
     .top-bar, .search-form{
@@ -178,6 +189,6 @@ header {
         display: none !important;
     }
     .mobile-menu{
-        display: block !important;
+        display: flex !important;
     }
   }

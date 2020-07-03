@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: #fff;
     span {
         display: block;
@@ -16,6 +17,13 @@
         font-size: 4.5rem;
         font-weight: bold;
         margin-top: -10%;
+        z-index: 2;
+    }
+    h1 {
+        font-weight: bold;
+        margin-top: -10%;
+        text-transform: uppercase;
+        z-index: 2;
     }
 }
 .title-wrapper {
@@ -128,6 +136,15 @@
 // blogcontent
 .blog-content {
     text-align: center;
+    .fields {
+        background:rgba($lightblue, 0.3);
+        color: $darkblue;
+        border-radius: 5px;
+        list-style: none;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+        text-align: left;
+    }
     .content {
         padding: 1rem;
         text-align: left;
@@ -288,6 +305,7 @@
                 .vcard {
                     img {
                         margin: 0 0.5rem 0 0;
+                        width: auto;
                     }
                     .fn {
                         font-style: normal;

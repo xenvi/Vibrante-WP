@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="page-landing">
-    <span><?php echo get_the_archive_title();?></span>
+    <span><?php the_title();?></span>
     <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
         <?php if(function_exists('bcn_display'))
         {
@@ -17,20 +17,23 @@
 </section>
 <section class="page-wrap">
     <div class="container">
-        <section class="row">
-            <div class="col-lg-9">
-                <?php get_template_part('includes/section','archive'); ?>
 
-                <?php echo paginate_links();?>
-            </div>
-            <div class="col-lg-3 widgets">
-                <?php if(is_active_sidebar('blog-sidebar')):?>
-                    <?php dynamic_sidebar('blog-sidebar');?>
+    <section class="row">
+        <div class="col-lg-9 ourteam">
+            <?php if(has_post_thumbnail()):?>
+                    <img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/>
                 <?php endif;?>
-            </div>
-        </section>
-    </div>
 
+            <?php get_template_part('includes/section','content'); ?>
+        </div>
+        <div class="col-lg-3 widgets">
+            <?php if(is_active_sidebar('page-sidebar')):?>
+                <?php dynamic_sidebar('page-sidebar');?>
+            <?php endif;?>
+        </div>
+    </section>
+
+    </div>
 </section>
 
 <?php get_footer(); ?>

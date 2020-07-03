@@ -8,3 +8,15 @@
         text-align: left;
     }
 }
+
+// our team
+.ourteam {
+    img:nth-child(even) {
+        float: left;
+        width: 300px !important;
+    }
+    img:nth-child(odd) {
+        float: right;
+        width: 300px;
+    }
+}

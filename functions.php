@@ -60,14 +60,6 @@ function my_sidebars()
             'after_title' => '</h4>'
         )
     );
-    register_sidebar(
-        array(
-            'name' => '404 Sidebar',
-            'id' => '404-sidebar',
-            'before_title' => '<h4 class="widget-title">',
-            'after_title' => '</h4>'
-        )
-    );
 }
 add_action('widgets_init', 'my_sidebars');
 
@@ -103,3 +95,19 @@ function first_taxonomy()
     register_taxonomy('brands', array('products'), $args);
 }
 add_action('init', 'first_taxonomy');
+
+// update archive title filter
+add_filter( 'get_the_archive_title', function ($title) {    
+    if ( is_category() ) {    
+            $title = single_cat_title( '', false );    
+        } elseif ( is_tag() ) {    
+            $title = single_tag_title( '', false );    
+        } elseif ( is_author() ) {    
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;    
+        } elseif ( is_tax() ) { //for custom post types
+            $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+        } elseif (is_post_type_archive()) {
+            $title = post_type_archive_title( '', false );
+        }
+    return $title;    
+});
