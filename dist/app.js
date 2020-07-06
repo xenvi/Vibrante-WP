@@ -93,6 +93,14 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+jQuery(document).ready(function () {
+  jQuery(".hamburger").click(function () {
+    jQuery(".mobile-nav").addClass("slidein");
+  });
+  jQuery(".close-menu").click(function () {
+    jQuery(".mobile-nav").removeClass("slidein");
+  });
+});
 jQuery(window).scroll(function () {
   var scroll = jQuery(window).scrollTop();
 

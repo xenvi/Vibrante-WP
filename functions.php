@@ -40,6 +40,7 @@ register_nav_menus(
 add_image_size('blog-large', 800, 400, true);
 add_image_size('blog-small', 300, 200, true);
 add_image_size('header', 1048, 214, true);
+add_image_size('profile', 600, 400, true);
 
 // register sidebars
 function my_sidebars()
@@ -64,7 +65,7 @@ function my_sidebars()
 add_action('widgets_init', 'my_sidebars');
 
 // post types
-function first_post_type()
+function product_post_type()
 {
     $args = array(
         'labels' => array(
@@ -79,10 +80,27 @@ function first_post_type()
     );
     register_post_type('products', $args);
 }
-add_action('init', 'first_post_type');
+add_action('init', 'product_post_type');
+
+function team_post_type()
+{
+    $args = array(
+        'labels' => array(
+            'name' => 'Team',
+            'singular_name' => 'Member'
+        ),
+        'hierarchical' => true,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-admin-users',
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+    );
+    register_post_type('team', $args);
+}
+add_action('init', 'team_post_type');
 
 // taxonomy
-function first_taxonomy()
+function taxonomy()
 {
     $args = array(
         'labels' => array(
@@ -94,7 +112,7 @@ function first_taxonomy()
     );
     register_taxonomy('brands', array('products'), $args);
 }
-add_action('init', 'first_taxonomy');
+add_action('init', 'taxonomy');
 
 // update archive title filter
 add_filter( 'get_the_archive_title', function ($title) {    

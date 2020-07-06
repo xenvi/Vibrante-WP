@@ -1,4 +1,13 @@
-  jQuery(window).scroll(function() {    
+jQuery(document).ready(function() {
+  jQuery(".hamburger").click(() => {
+    jQuery(".mobile-nav").addClass("slidein");
+  })
+  jQuery(".close-menu").click(() => {
+    jQuery(".mobile-nav").removeClass("slidein");
+  })
+});
+ 
+ jQuery(window).scroll(function() {    
     var scroll = jQuery(window).scrollTop();
 
     if (scroll > 50) {

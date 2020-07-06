@@ -1,3 +1,10 @@
+<?php 
+/*
+Template Name: Our Team
+?>
+*/
+?>
+
 <?php get_header(); ?>
 <section class="page-landing">
     <span><?php the_title();?></span>
@@ -17,19 +24,13 @@
 </section>
 <section class="page-wrap">
     <div class="container">
-
-    <section class="row">
-        <div class="col-lg-9 ourteam">
+        <div class="ourteam">
             <?php if(has_post_thumbnail()):?>
                     <img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/>
-                <?php endif;?>
+            <?php endif;?>
 
             <?php get_template_part('includes/section','content'); ?>
-        </div>
-        <div class="col-lg-3 widgets">
-            <?php if(is_active_sidebar('page-sidebar')):?>
-                <?php dynamic_sidebar('page-sidebar');?>
-            <?php endif;?>
+            <?php get_template_part('includes/section','team'); ?>
         </div>
     </section>
 

@@ -10294,9 +10294,9 @@ header .top-bar li .sub-menu li a:hover:before {
   transition: 0.3s all;
 }
 
-.mobile-menu {
+.mobile-nav {
+  transform: translateX(150%);
   display: none;
-  list-style-type: none;
   width: 50%;
   height: 100vh;
   position: fixed;
@@ -10304,9 +10304,80 @@ header .top-bar li .sub-menu li a:hover:before {
   right: 0;
   background: #fff;
   box-shadow: 0 0 1rem #24305E;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+.mobile-nav .menu-mobile-menu-container {
+  width: 100%;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  list-style-type: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu li {
+  text-align: center;
+  border-bottom: 1px solid rgba(55, 71, 133, 0.1);
+  padding: 0.5rem 0;
+  transition: 0.3s ease-in-out;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu li:first-child {
+  border-top: 0.2rem solid #F76C6C;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu li:last-child {
+  border-bottom: 0.2rem solid #F76C6C;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #24305E;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu li:hover {
+  background: rgba(55, 71, 133, 0.02);
+  transition: 0.3s ease-in-out;
+}
+.mobile-nav .menu-mobile-menu-container .mobile-menu li:hover a {
+  color: #F76C6C;
+  transition: 0.3s ease-in-out;
+}
+.mobile-nav .close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.75rem;
+  color: #F76C6C;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+.mobile-nav .close-menu:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+}
+
+.hamburger {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.hamburger i {
+  transition: 0.2s ease-in-out;
+}
+.hamburger:hover i {
+  text-shadow: 0 0 0.4rem #000;
+  transition: 0.2s ease-in-out;
+}
+
+.slidein {
+  transform: translateX(0);
+  transition: 0.5s ease-in-out;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -10314,7 +10385,7 @@ header .top-bar li .sub-menu li a:hover:before {
     display: flex !important;
   }
 
-  .mobile-menu {
+  .mobile-nav, .hamburger {
     display: none !important;
   }
 }
@@ -10323,8 +10394,13 @@ header .top-bar li .sub-menu li a:hover:before {
     display: none !important;
   }
 
-  .mobile-menu {
+  .mobile-nav, .hamburger {
     display: flex !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .mobile-nav {
+    padding: 1rem !important;
   }
 }
 .landing {
@@ -10408,13 +10484,47 @@ header .top-bar li .sub-menu li a:hover:before {
   text-align: left;
 }
 
-.ourteam img:nth-child(even) {
-  float: left;
-  width: 300px !important;
+.ourteam {
+  text-align: left;
 }
-.ourteam img:nth-child(odd) {
-  float: right;
-  width: 300px;
+.ourteam .member {
+  margin-top: 3rem;
+}
+.ourteam .member img {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.ourteam .member .name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ourteam .member .title {
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: -0.5rem;
+  color: #F76C6C;
+}
+.ourteam .member .fields {
+  list-style: none;
+  display: flex;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+.ourteam .member .fields li {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+.ourteam .member .fields li a i {
+  color: #A8D0E6;
+  transition: 0.3s ease-in-out;
+}
+.ourteam .member .fields li a i:hover {
+  transform: rotate(25deg);
+  color: #F76C6C;
+  text-shadow: 0 0.2rem 0.2rem rgba(36, 48, 94, 0.2);
+  transition: 0.3s ease-in-out;
 }
 
 .wpcf7-form label {
@@ -10923,6 +11033,7 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .page-wrap {

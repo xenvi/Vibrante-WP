@@ -161,9 +161,9 @@ header {
 
 
 // mobile menu
-.mobile-menu{
+.mobile-nav{
+    transform: translateX(150%);
     display: none;
-    list-style-type: none;
     width: 50%;
     height: 100vh;
     position: fixed;
@@ -171,15 +171,83 @@ header {
     right: 0;
     background: #fff;
     box-shadow: 0 0 1rem $darkblue;
-    flex-direction: column;
+    padding: 2rem;
     justify-content: center;
     align-items: center;
+    transition: 0.5s ease-in-out;
+    .menu-mobile-menu-container{ 
+        width: 100%;
+        .mobile-menu {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            padding-inline-start: 0;
+            li {
+                text-align: center;
+                border-bottom: 1px solid rgba($mediumblue, 0.1);
+                padding: 0.5rem 0;
+                transition: 0.3s ease-in-out;
+                &:first-child {
+                    border-top: 0.2rem solid $salmon;
+                }
+                &:last-child {
+                    border-bottom: 0.2rem solid $salmon;
+                }
+                a {
+                    display:block;
+                    width: 100%;
+                    height: 100%;
+                    color: $darkblue;
+                    text-decoration: none;
+                    transition: 0.3s ease-in-out;
+                }
+                &:hover {
+                    a {
+                        color: $salmon;
+                        transition: 0.3s ease-in-out;
+                    }
+                    background:rgba($mediumblue, 0.02);
+                    transition: 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+    .close-menu {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.75rem;
+        color: $salmon;
+        cursor: pointer;
+        transition: 0.5s ease-out;
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.5s ease-in-out;
+        }
+    }
+}
+.hamburger {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    i {
+        transition: 0.2s ease-in-out;
+    }
+    &:hover i {
+        text-shadow: 0 0 0.4rem #000;
+        transition: 0.2s ease-in-out;
+    }
+}
+.slidein {
+    transform: translateX(0);
+    transition: 0.5s ease-in-out;
 }
   @media only screen and (min-width: 1000px){
     .top-bar, .search-form{
         display: flex !important;
     }
-    .mobile-menu{
+    .mobile-nav, .hamburger{
         display: none !important;
     }
   }
@@ -188,7 +256,12 @@ header {
     .top-bar, .search-form{
         display: none !important;
     }
-    .mobile-menu{
+    .mobile-nav, .hamburger{
         display: flex !important;
+    }
+  } 
+  @media only screen and (max-width: 500px){
+    .mobile-nav{
+        padding: 1rem !important;
     }
   }
