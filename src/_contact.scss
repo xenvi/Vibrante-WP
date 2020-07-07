@@ -1,4 +1,6 @@
 .wpcf7-form {
+    padding: 1rem;
+    margin-bottom: 2rem;
     label {
         text-transform: uppercase;
         font-weight: bold;
@@ -33,5 +35,23 @@
             background: $salmon;
             transition: 0.3s ease-in-out;
         }
+    }
+}
+.info-box {
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: 4rem;
+    i {
+        color: $salmon;
+        font-size: 1.3rem;
+        margin-right: 1rem;
+    }
+    h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    p {
+        margin: 0;
     }
 }

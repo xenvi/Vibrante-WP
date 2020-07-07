@@ -28,10 +28,8 @@ Template Name: Contact Us
             <div class="col-lg-7">
                 <?php get_template_part('includes/section','content'); ?>
             </div>
-            <div class="col-lg-5 widgets">
-            <?php if(is_active_sidebar('blog-sidebar')):?>
-                    <?php dynamic_sidebar('blog-sidebar');?>
-                <?php endif;?>
+            <div class="col-lg-5">
+                <?php get_template_part('includes/section','contact'); ?>
             </div>
         </div>
     </div>

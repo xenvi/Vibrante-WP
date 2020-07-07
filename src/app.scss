@@ -16,6 +16,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  color: $darkblue;
 }
 .page-wrap {
     padding: 2rem;
@@ -45,6 +46,14 @@ body {
 }
 .current {
   color: $salmon;
+}
+img {
+  width: 100%;
+}
+.content {
+  ul {
+    padding: 0 5rem;
+  }
 }
 
 // 404
@@ -133,7 +142,7 @@ body {
       font-size: 1.25rem;
       width: 100%;
       padding: 0.3rem 0;
-      border-bottom: 0.1rem solid rgba($lightblue, 0.5);
+      border-bottom: 0.1rem solid rgba($yellow, 0.5);
     }
     ul {
       list-style-type: none;
@@ -205,11 +214,14 @@ body {
   }
 }
 
-img {
-  width: 100%;
-}
-.content {
-  ul {
-    padding: 0 5rem;
+// default page
+.wrapper {
+  text-align: center;
+  img {
+      border-radius: 5px;
+      margin: 0 0 2rem 0;
+  }
+  .content {
+      text-align: left;
   }
 }

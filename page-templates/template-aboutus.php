@@ -25,7 +25,7 @@ Template Name: About Us
     <div class="container">
 
     <section class="row">
-        <div class="col-lg-9 about-wrapper">
+        <div class="col-lg-9 wrapper">
             <?php if(has_post_thumbnail()):?>
                     <img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/>
                 <?php endif;?>

@@ -25,10 +25,6 @@ Template Name: Our Team
 <section class="page-wrap">
     <div class="container">
         <div class="ourteam">
-            <?php if(has_post_thumbnail()):?>
-                    <img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/>
-            <?php endif;?>
-
             <?php get_template_part('includes/section','content'); ?>
             <?php get_template_part('includes/section','team'); ?>
         </div>
