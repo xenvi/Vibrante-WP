@@ -1,6 +1,13 @@
-/**
+/*
 Theme Name: Vibrante
+Text Domain: vibrante
 Author: Niff
-Description: A vibrant, elegant, multipurpose WordPress theme with a modern and lightweight feel.
-Tags: blog, one-column, two-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, block-styles, mobile-support
-**/
+Author URI: http://wordpress.org/
+Description: A 2020 vibrant, elegant, multipurpose WordPress theme with a modern and lightweight feel. 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, block-styles
+Tested up to: 5.0
+Requires PHP: true
+*/

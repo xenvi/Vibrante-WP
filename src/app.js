@@ -32,3 +32,15 @@ toggle();
 jQuery( window ).resize( function () {
     toggle();
 } );
+
+jQuery(document)
+.off()
+.on("mouseup", (e) => {
+  // if click outside mobile nav, close nav
+  if (
+    !jQuery(".mobile-nav").is(e.target) &&
+    jQuery(".mobile-nav").has(e.target).length === 0
+  ) {
+    jQuery(".mobile-nav").removeClass("slidein");
+  }
+});

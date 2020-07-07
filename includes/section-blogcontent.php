@@ -1,6 +1,6 @@
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 
-<section class="blog-content">
+<section class="blog-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if(has_post_thumbnail()):?>
         <img src="<?php the_post_thumbnail_url('blog-large');?>" alt="<?php the_title();?>" class="img-fluid"/>
     <?php endif;?>
@@ -44,6 +44,7 @@
                 </ol>
             </div>
     <?php endif;?>
+    <?php paginate_comments_links(); ?>
 </section>
 
 <?php endwhile; else: endif; ?>
