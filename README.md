@@ -3,6 +3,7 @@
 
 Offers support for:
 * Blog functionality
+* Site search functionality
 * Responsive design using Bootstrap and media queries
 * Widgets and sidebars
 * ACF and Taxonomies
