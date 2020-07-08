@@ -6,7 +6,8 @@ Offers support for:
 * Site search functionality
 * Responsive design using Bootstrap and media queries
 * Widgets and sidebars
-* ACF and Taxonomies
+* Advanced Custom Fields and Taxonomies
+* Breadcrumbs navigation
 * SEO optimized
 * Photo optimized
 * Easy customization on admin portal
