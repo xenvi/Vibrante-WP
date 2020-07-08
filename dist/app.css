@@ -10144,6 +10144,14 @@ header {
   z-index: 998;
   transition: 0.3s all;
 }
+header .search {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+header .search i {
+  color: #fff;
+}
 header .container {
   display: flex;
   align-items: center;
@@ -10243,14 +10251,16 @@ header .top-bar li .sub-menu li a:hover:before {
   transition: 0.1s ease;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
-}
 .search i {
-  color: #fff;
+  color: #24305E;
   cursor: pointer;
+  transition: 0.3s all;
+}
+.search i:hover {
+  color: #F76C6C;
+  transform: rotate(5deg);
+  text-shadow: 0 0.3rem 0.2rem rgba(36, 48, 94, 0.2);
+  transition: 0.3s all;
 }
 .search input {
   background: none;

@@ -32,7 +32,7 @@ add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 
 // load text domain
-load_theme_textdomain('vibrante' );
+load_theme_textdomain('vibrante');
 
 // menus
 register_nav_menus(
