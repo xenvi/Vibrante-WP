@@ -1,1 +1,0 @@
-Vibrante is a 2020 vibrant, elegant, multipurpose WordPress theme with a modern and lightweight feel. It offers support for blogs, comments, responsive design and custom information.
